@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PP02_Cheremnykh.Classes;
 
 namespace PP02_Cheremnykh
 {
@@ -20,9 +21,25 @@ namespace PP02_Cheremnykh
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static List<CarContext> AllCar = CarContext.AllCar();
+        public static MainWindow init;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+        public enum pages
+        {
+            authorization,
+            main, car
+
+        }
+        public void OpenPages(pages _pages)
+        {
+            this.MinHeight = 800;
+            this.MinWidth = 800;
+            this.Height = 850;
+            this.Width = 850;
         }
     }
 }
